@@ -1,7 +1,9 @@
 ---
+nav:
+    order: 3
 hero:
-  title: Y RN
-  description: Y的RN插件
+  title: Test首页样式
+  description: 首页test
   actions:
     - text: Hello
       link: /
