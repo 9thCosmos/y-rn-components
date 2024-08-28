@@ -1,0 +1,9 @@
+# generated at 2/23/2023, 3:30:03 PM by quec-cli@1.11.1
+
+node_modules
+dist
+
+!.eslintrc.cjs
+!.prettierrc.cjs
+!.commitlintrc.cjs
+!.lintstagedrc.cjs

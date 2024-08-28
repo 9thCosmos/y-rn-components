@@ -1,0 +1,33 @@
+{
+  "name": "@lizhengyu617/widgets",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc --composite false",
+    "dev": "tsc --watch --composite false",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@lizhengyu617/utils": "workspace:*",
+    "react-native-svg": "12.4.4"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.1",
+    "@types/react-native": "0.64.3",
+    "moment": "2.30.1",
+    "react": "17.0.1",
+    "react-native": "0.64.3"
+  },
+  "peerDependencies": {
+    "moment": "2.30.1",
+    "react": "17.0.1",
+    "react-native": "0.64.3"
+  }
+}
