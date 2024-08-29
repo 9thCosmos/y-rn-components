@@ -9,7 +9,12 @@ group:
 This is an example component.
 
 ```jsx
-import { AButton } from 'Demo';
+import { Button } from '@lizhengyu617/widgets';
+import { View } from 'react-native';
 
-export default () => <AButton title="Hello dumi!" />
+export default () => (
+    <View style={{ gap: 16 }}>
+        <Button title={'solid(default)'}  />
+    </View>
+);
 ```
