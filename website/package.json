@@ -1,72 +1,37 @@
 {
-  "name": "Demo",
-  "version": "0.0.1",
-  "description": "A react library developed with dumi",
-  "module": "dist/index.js",
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
-    "build": "father build",
-    "build:watch": "father dev",
-    "docs:build": "dumi build",
-    "docs:preview": "dumi preview",
-    "prepare": "husky install && dumi setup",
-    "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "father doctor && npm run build"
-  },
-  "authors": [
-    "ives.li@quectel.com"
-  ],
-  "license": "MIT",
   "files": [
     "dist"
   ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+  "scripts": {
+    "build": "rimraf dist && tsc --composite false",
+    "dev": "tsc --watch --composite false",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
+  "dependencies": {
+    "@quec/panel-theme": "workspace:*",
+    "chroma-js": "^2.4.2",
+    "react-native-shadow-2": "^7.0.8",
+    "react-native-svg": "12.4.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@umijs/lint": "^4.0.0",
-    "dumi": "^2.3.0",
-    "dumi-theme-mobile": "^2.1.1",
-    "eslint": "^8.23.0",
-    "father": "^4.1.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.0.0",
-    "prettier-plugin-packagejson": "^2.2.18",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "stylelint": "^14.9.1"
+    "@types/chroma-js": "^2.4.0",
+    "@types/react": "17.0.1",
+    "@types/react-native": "0.64.3",
+    "moment": "2.30.1",
+    "react": "17.0.1",
+    "react-native": "0.64.3"
+  },
+  "peerDependencies": {
+    "moment": "2.30.1",
+    "react": "17.0.1",
+    "react-native": "0.64.3"
   }
 }

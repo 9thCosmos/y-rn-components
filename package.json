@@ -4,9 +4,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:docs": "pnpm -C website build",
+    "clean:node_modules": "rimraf website/node_modules && rimraf packages/*/node_modules && rimraf apps/*/node_modules && rimraf node_modules",
+    "dev:widgets": "pnpm -C packages/widgets dev",
+    "dev:docs": "pnpm -C website dev",
+    "expo:dev": "pnpm -C apps/expo dev",
+    "prepare": "husky install && pnpm -C website setup",
+    "reinstall": "pnpm clean:node_modules && pnpm install",
+    "test": "echo \"Tips: no test specified\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.3.0",
+    "tsc-files": "^1.1.3",
+    "typescript": "^5.1.6"
+  }
 }
