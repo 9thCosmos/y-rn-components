@@ -1,10 +1,12 @@
-import React, { FC, ReactNode, useContext, useState } from 'react';
+import React, { FC } from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableOpacityProps,
+    TouchableNativeFeedbackProps
 } from 'react-native';
 
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps, TouchableNativeFeedbackProps{
     title: string;
 }
 
