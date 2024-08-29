@@ -3,9 +3,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@@/*": [".dumi/tmp/*"],
-            "@quec/panel-base-ui": ["packages/base-ui/dist/"],
-            "@quec/panel-theme": ["packages/theme/dist/"]
+            "@@/*": [
+                ".dumi/tmp/*"
+            ],
+            "@lizhengyu617/widgets": [
+                "packages/widgets/dist/"
+            ],
         },
         "removeComments": true,
         "composite": true,
@@ -15,7 +18,10 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "lib": ["esnext", "dom"],
+        "lib": [
+            "esnext",
+            "dom"
+        ],
         "module": "ESNext",
         "moduleResolution": "node",
         "noFallthroughCasesInSwitch": true,

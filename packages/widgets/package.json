@@ -15,7 +15,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@lizhengyu617/utils": "workspace:*",
     "react-native-svg": "12.4.4"
   },
   "devDependencies": {
