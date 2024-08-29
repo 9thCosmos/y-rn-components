@@ -1,0 +1,79 @@
+# generated at 2/23/2023, 3:30:11 PM by quec-cli@1.11.1
+
+stages:
+    - test
+    - version
+    - docsV2
+
+variables:
+    COLON: ':'
+
+before_script:
+    - nvm use
+    - node -v
+    - npm -v
+    - yarn -v
+    - pnpm -v
+
+test:
+    stage: test
+    before_script:
+        - pnpm install
+    script:
+        - echo "开始测试panel-utils"
+        - pnpm -C packages/utils vitest
+    only:
+        - master
+    tags:
+        - fed-shell
+
+version:
+    stage: version
+    before_script:
+        - git stash
+        - git stash clear
+        - git config user.name "gitlab-runner"
+        - git config user.email "fed-bot@quectel.com"
+        - git remote set-url origin ssh://git@gitlab.quectel.com:8061/frontend/quec-panel.git
+        - git remote -v
+        - git branch -r
+        - git checkout $CI_COMMIT_REF_NAME
+        - git pull
+        - pnpm install
+    script:
+        - pnpm changeset version
+        - pnpm prettier --write .changeset/*.json
+        - if [[ ! -z "$(git status --porcelain)" ]]; then
+              git add . &&
+              git commit -m "chore$COLON 🤖bump version" &&
+              pnpm -C packages/theme build &&
+              pnpm -C packages/base-ui build &&
+              pnpm changeset publish &&
+              git push origin HEAD --tags &&
+              pnpm build:docs &&
+              rm -rf /home/gitlab-runner/quec-fed-docs/quec-panel/ &&
+              cp -r website/docs-dist/ /home/gitlab-runner/quec-fed-docs/quec-panel/ &&
+              echo "发布成功" ;
+          else
+              echo "没有需要发布的版本" ;
+          fi
+        - pnpm changeset status
+    only:
+        - master
+    tags:
+        - fed-shell
+
+docsV2:
+    stage: docsV2
+    before_script:
+        - pnpm install
+    script:
+        - pnpm -C packages/theme build
+        - pnpm -C packages/base-ui build
+        - pnpm build:docs
+        - rm -rf /home/gitlab-runner/quec-fed-docs/quec-panel/
+        - cp -r website/docs-dist/ /home/gitlab-runner/quec-fed-docs/quec-panel/
+    only:
+        - v2
+    tags:
+        - fed-shell

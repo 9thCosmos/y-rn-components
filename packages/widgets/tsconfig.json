@@ -8,6 +8,15 @@
         "composite": true,
         "rootDir": "src"
     },
-    "include": ["src/**/*.tsx", "src/**/*.ts", "src/index.ts"],
-    "exclude": ["dist", "node_modules", "src/**/__tests__", "src/**/*.usage.tsx"]
+    "include": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "src/index.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "src/**/__tests__",
+        "src/**/*.usage.tsx"
+    ]
 }

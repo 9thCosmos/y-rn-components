@@ -8,5 +8,5 @@ export default defineConfig({
   },
   alias: {
     '@lizhengyu617/widgets$': path.resolve(__dirname, '../packages/widgets/dist/index.js'),
-},
+  },
 });
