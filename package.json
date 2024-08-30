@@ -11,7 +11,6 @@
         "clean:node_modules": "rimraf website/node_modules && rimraf packages/*/node_modules && rimraf apps/*/node_modules && rimraf node_modules",
         "dev:base-ui": "pnpm -C packages/base-ui dev",
         "dev:docs": "pnpm -C website dev",
-        "dev:theme": "pnpm -C packages/theme dev",
         "expo:dev": "pnpm -C apps/expo dev",
         "prepare": "husky install && pnpm -C website setup",
         "reinstall": "pnpm clean:node_modules && pnpm install",
