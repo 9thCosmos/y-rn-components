@@ -1,0 +1,32 @@
+{
+    "name": "@quec/panel-theme",
+    "version": "2.0.0",
+    "description": "",
+    "keywords": [],
+    "license": "ISC",
+    "author": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rimraf dist && tsc --composite false",
+        "dev": "tsc --watch --composite false",
+        "vitest": "vitest run",
+        "vitest:coverage": "vitest run --coverage",
+        "vitest:ui": "vitest --ui",
+        "vitest:watch": "vitest"
+    },
+    "dependencies": {
+        "@quec/utils": "^1.12.0",
+        "chroma-js": "^2.4.2"
+    },
+    "devDependencies": {
+        "@types/chroma-js": "^2.4.0",
+        "react": "17.0.1"
+    },
+    "peerDependencies": {
+        "react": "17.0.1"
+    }
+}
