@@ -9,7 +9,7 @@ group:
 This is an example component.
 
 ```jsx
-import { Button } from '@lizhengyu617/widgets';
+import { Button } from '@lizhengyu617/y-widgets';
 import { View } from 'react-native';
 
 export default () => (

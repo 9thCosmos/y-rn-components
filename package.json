@@ -10,6 +10,7 @@
         "build:docs": "pnpm -C website build",
         "clean:node_modules": "rimraf website/node_modules && rimraf packages/*/node_modules && rimraf apps/*/node_modules && rimraf node_modules",
         "dev:widgets": "pnpm -C packages/widgets dev",
+        "dev:utils": "pnpm -C packages/utils dev",
         "dev:docs": "pnpm -C website dev",
         "prepare": "husky install && pnpm -C website setup",
         "reinstall": "pnpm clean:node_modules && pnpm install",

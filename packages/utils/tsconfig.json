@@ -1,0 +1,22 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "jsx": "react", //指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
+        "allowJs": true, // 允许编译 javascript 文件，在js文件中可以有d.ts/ts文件的类型提示 
+        "outDir": "dist", // 指定输出目录
+        "declaration": true, //生成相应的 '.d.ts' 文件
+        "composite": true,
+        "rootDir": "src"
+    },
+    "include": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "src/index.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "src/**/__tests__",
+        "src/**/*.usage.tsx"
+    ]
+}

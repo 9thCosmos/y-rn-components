@@ -1,5 +1,5 @@
 {
-  "name": "@lizhengyu617/y-widgets",
+  "name": "@lizhengyu617/y-utils",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -18,10 +18,10 @@
   "dependencies": {
     "chroma-js": "^2.4.2",
     "react-native-shadow-2": "^7.0.8",
-    "react-native-svg": "12.4.4",
-    "@lizhengyu617/y-utils": "workspace:*"
+    "react-native-svg": "12.4.4"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.0",
     "@types/react": "17.0.1",
     "@types/react-native": "0.64.3",
     "moment": "2.30.1",
