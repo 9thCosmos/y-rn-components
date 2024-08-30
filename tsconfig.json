@@ -1,11 +1,14 @@
 {
     "Display": "Quec React Native Panel",
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": ".", // 用于解析非相对模块名称的基目录,例如你在TS代码中使用非相对路径，ts编辑器从该baseUrl开始查找
         "paths": {
-            "@@/*": [".dumi/tmp/*"],
-            "@quec/panel-base-ui": ["packages/base-ui/dist/"],
-            "@quec/panel-theme": ["packages/theme/dist/"]
+            "@@/*": [
+                ".dumi/tmp/*"
+            ],
+            "@quec/panel-base-ui": [
+                "packages/base-ui/dist/"
+            ],
         },
         "removeComments": true,
         "composite": true,
@@ -15,7 +18,10 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "lib": ["esnext", "dom"],
+        "lib": [
+            "esnext",
+            "dom"
+        ],
         "module": "ESNext",
         "moduleResolution": "node",
         "noFallthroughCasesInSwitch": true,
